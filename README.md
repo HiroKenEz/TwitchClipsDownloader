@@ -10,7 +10,7 @@ for code improvement, please let me know by written message or by sending code. 
 
 selenium 4 is required ....
 
-creates a "Clips.txt" file in the same folder as "main.py"
+create a "Clips.txt" file in the same folder as "main.py"
 
 you need chrome and chromedriver
 
