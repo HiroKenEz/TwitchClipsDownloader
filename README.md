@@ -1,6 +1,6 @@
 # Twitch Clips Downloader
 
-selenium 4 is required ....
+selenium 4 is required + moviepy + os + time + shutil
 
 create a "Clips.txt" file in the same folder as "main.py"
 
