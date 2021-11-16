@@ -2,11 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from time import sleep
 
+import TimeVideoFilter
+import Streamerlink #not active now
+
 global streamLink
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
-service = ChromeService(executable_path=(r"CHROMEDRIVER PATH"))#SET PATH FOR CHROMEDRIVER /////// EXAMPLE r"C:\Users\HiroKen\source\repos\TwitchClipsDownloader\chromedriver.exe" 
+service = ChromeService(executable_path=(r"C:\Users\HiroKen\PycharmProjects\RobotYoutuber\chromedriver.exe"))#SET PATH FOR CHROMEDRIVER /////// EXAMPLE r"C:\Users\HiroKen\source\repos\TwitchClipsDownloader\chromedriver.exe"
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.maximize_window() #Maximize chrome window // you can delete this if you want
@@ -36,11 +39,13 @@ for link in streamLink: #repeat the process the number of times there are lines 
             links = str(links.get_attribute("src")) #get download link "filter"
             driver.get(links) #go to the download link
             f.close() #close Clips.txt
-            sleep(3) #sleep for loading / connection ..... 
-            
+            sleep(3) #sleep for loading / connection .....
     except:
         pass #pass all error
              #fix and display error = work in progress....
 
-sleep(10) #increase this sleep if you have bad connection .....
+sleep(7) #increase this sleep if you have bad connection .....
 driver.quit() #close chrome
+
+
+TimeVideoFilter.GetClipPath() #file creation for each best of
